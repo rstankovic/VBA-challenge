@@ -1,5 +1,5 @@
 Attribute VB_Name = "Module1"
-Sub LetsRun() 
+Sub LetsRun()
     'sub that will run through the active worksheet
     Dim b As Double
     Dim isEmpty As String
@@ -82,12 +82,10 @@ Sub LetsRun()
     Cells(2, 13).Value = Format(currMax, "Percent")
     Cells(1, 14).Value = "Stock with greatest negative change is " & minStock
     Cells(2, 14).Value = Format(currMin, "Percent")
-
-    MsgBox ("done!")
     
 End Sub
 
-Sub Umbrella() 
+Sub Umbrella()
     'sub that will run previous sub through all worksheets
     Dim ws As Worksheet
     Dim starting_ws As Worksheet
@@ -96,7 +94,6 @@ Sub Umbrella()
     For Each ws In ThisWorkbook.Worksheets
         ws.Activate
         ' do whatever you need
-        MsgBox (ws.Name)
         LetsRun
         ws.Cells(1, 1) = 1 'this sets cell A1 of each sheet to "1"
     Next
